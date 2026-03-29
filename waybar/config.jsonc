@@ -23,7 +23,7 @@
         "power-profiles-daemon",
         "cpu",
         "memory",
-        "keyboard-state",
+        //"keyboard-state",
         "battery",
         "clock",
         "tray",
