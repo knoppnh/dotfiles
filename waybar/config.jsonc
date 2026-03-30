@@ -8,9 +8,9 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/app",
-	"hyprland/workspaces",
+	    "hyprland/workspaces",
         "hyprland/submap",
-        "hyprland/scratchpad",
+        //"hyprland/scratchpad",
         "custom/media"
     ],
     "modules-center": [
@@ -19,7 +19,7 @@
     "modules-right": [
         "mpd",
         "pulseaudio",
-        "network",
+        //"network",
         "power-profiles-daemon",
         "cpu",
         "memory",
@@ -27,7 +27,7 @@
         "battery",
         "clock",
         "tray",
-        "custom/power",
+        "custom/power"
     ],
     // Modules configuration
     //"hyprland/workspaces": {
@@ -99,7 +99,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 30,
         "spacing": 10,
         // "icons": {
         //   "blueman": "bluetooth",
