@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/app","hyprland/workspaces", "custom/media"],
+        "modules-left": ["custom/app","hyprland/workspaces","custom/firefox", "custom/media"],
         "modules-center": ["hyprland/window"],
         "modules-right": ["tray","group/expand","bluetooth","battery","clock", "custom/power"],
 
@@ -149,7 +149,14 @@
     },
     "custom/app": {
         "format": "  ",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Apps",
         "on-click": "vicinae toggle"
-   }
+   },
+    "custom/firefox" : {
+        "format" : "  ",
+        "tooltip" : "true",
+        "tooltip-format":"Firefox",
+        "on-click" : "firefox"
+        }
 }
