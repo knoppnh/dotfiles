@@ -148,7 +148,7 @@
         }
     },
     "custom/app": {
-        "format": "  MENU ",
+        "format": "  ",
         "tooltip": false,
         "on-click": "vicinae toggle"
    }
