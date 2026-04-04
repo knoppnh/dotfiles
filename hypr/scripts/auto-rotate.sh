@@ -13,14 +13,14 @@ monitor-sensor | while read -r line; do
             hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,0"
             hyprctl keyword input:touchdevice:transform 0
             hyprctl keyword input:tablet:transform 0
-        elif [[ $line == *"orientation changed: right-up"* ]]; then
-            hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,3"
-            hyprctl keyword input:touchdevice:transform 3
-            hyprctl keyword input:tablet:transform 3
-        elif [[ $line == *"orientation changed: left-up"* ]]; then
-            hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,1"
-            hyprctl keyword input:touchdevice:transform 1
-            hyprctl keyword input:tablet:transform 1
+        #elif [[ $line == *"orientation changed: right-up"* ]]; then
+        #    hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,3"
+        #    hyprctl keyword input:touchdevice:transform 3
+        #    hyprctl keyword input:tablet:transform 3
+        #elif [[ $line == *"orientation changed: left-up"* ]]; then
+        #    hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,1"
+        #    hyprctl keyword input:touchdevice:transform 1
+        #    hyprctl keyword input:tablet:transform 1
         elif [[ $line == *"orientation changed: bottom-up"* ]]; then
             hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,2"
             hyprctl keyword input:touchdevice:transform 2
