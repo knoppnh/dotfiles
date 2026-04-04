@@ -1,32 +1,30 @@
-~/.config/hypr/scripts/auto-rotate.sh
-
 #!/bin/bash
+# File to store rotation toggle state (0 = off, 1 = on)
+TOGGLE_FILE="$HOME/.config/hypr/rotation-toggle"
 
-TOUCHSCREEN="nvtk0603:00-0603:f001"
+# Ensure toggle file exists, default to enabled (1)
+[ -f "$TOGGLE_FILE" ] || echo "1" > "$TOGGLE_FILE"
 
-pkill -f "monitor-sensor" 2>/dev/null
-
+# Monitor sensor and adjust screen based on orientation
 monitor-sensor | while read -r line; do
-    case "$line" in
-        *"orientation changed: normal"*)
-            # Laptop mode (landscape)
-            hyprctl keyword monitor "eDP-1,preferred,auto,2,transform,3"
-            hyprctl keyword "device[$TOUCHSCREEN]:transform" 3
-            ;;
-        *"orientation changed: left-up"*)
-            # Tablet portrait (rotated left)
-            hyprctl keyword monitor "eDP-1,preferred,auto,2,transform,0"
-            hyprctl keyword "device[$TOUCHSCREEN]:transform" 0
-            ;;
-        *"orientation changed: right-up"*)
-            # Tablet portrait (rotated right)
-            hyprctl keyword monitor "eDP-1,preferred,auto,2,transform,2"
-            hyprctl keyword "device[$TOUCHSCREEN]:transform" 2
-            ;;
-        *"orientation changed: bottom-up"*)
-            # Laptop mode flipped
-            hyprctl keyword monitor "eDP-1,preferred,auto,2,transform,1"
-            hyprctl keyword "device[$TOUCHSCREEN]:transform" 1
-            ;;
-    esac
+    # Check if rotation is enabled
+    if [ "$(cat "$TOGGLE_FILE")" -eq 1 ]; then
+        if [[ $line == *"orientation changed: normal"* ]]; then
+            hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,0"
+            hyprctl keyword input:touchdevice:transform 0
+            hyprctl keyword input:tablet:transform 0
+        elif [[ $line == *"orientation changed: right-up"* ]]; then
+            hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,3"
+            hyprctl keyword input:touchdevice:transform 3
+            hyprctl keyword input:tablet:transform 3
+        elif [[ $line == *"orientation changed: left-up"* ]]; then
+            hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,1"
+            hyprctl keyword input:touchdevice:transform 1
+            hyprctl keyword input:tablet:transform 1
+        elif [[ $line == *"orientation changed: bottom-up"* ]]; then
+            hyprctl keyword monitor "eDP-1,1920x1200@60,0x0,1.2,transform,2"
+            hyprctl keyword input:touchdevice:transform 2
+            hyprctl keyword input:tablet:transform 2
+        fi
+    fi
 done
