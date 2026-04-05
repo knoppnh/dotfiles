@@ -6,24 +6,25 @@
 }
 window#waybar{
     all:unset;
+    background-color: rgba(40, 42, 54, 0.8)
 }
 .modules-left {
     padding:7px;
-    margin:10 0 5 10;
+    margin:5 0 5 5;
     border-radius:10px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 .modules-center {
     padding:7px;
-    margin:10 0 5 0;
+    margin:5 0 5 0;
     border-radius:10px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 .modules-right {
     padding:7px;
-    margin: 10 10 5 0;
+    margin: 5 5 5 0;
     border-radius:10px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
@@ -91,23 +92,20 @@ tooltip {
 #bluetooth{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
-
+    color:#ADD8E6;
 }
 #network{
     padding: 0px 5px;
     transition: all .3s ease;
     color:@color7;
-
 }
 #battery{
-    padding: 0px 5px;
+    padding: 0 10 0 10;
     transition: all .3s ease;
     color:@color7;
-
-
 }
 #battery.charging {
+    padding: 0 10 0 10;
     color: #26A65B;
 }
 
@@ -125,7 +123,7 @@ tooltip {
 }
 #group-expand{
     padding: 0px 5px;
-    transition: all .3s ease; 
+    transition: all .3s ease;
 }
 #custom-expand{
     padding: 0px 5px;
@@ -144,7 +142,6 @@ tooltip {
     padding: 0px 5px;
     transition: all .3s ease; 
     color:@color7;
-
 }
 #custom-endpoint{
     color:transparent;
@@ -154,10 +151,9 @@ tooltip {
 #tray{
     padding: 0px 5px;
     transition: all .3s ease; 
-
 }
 #tray menu * {
-    padding: 0px 5px;
+    padding: 0 5 0 5;
     transition: all .3s ease; 
 }
 
@@ -167,20 +163,20 @@ tooltip {
 
 #tray menu separator {
     padding: 0px 5px;
-    transition: all .3s ease; 
+    transition: all .3s ease;
 }
 #custom-firefox{
     color:#f3463b
 }
 #pulseaudio {
-background-color: #f1c40f;
-color: #000000;
+    padding: 0 10 0 10;
+    background-color: transparent;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #pulseaudio:hover {
-background-color: #a37800;
+    background-color: #a37800;
 }
 #pulseaudio.muted {
-background-color: #90b1b1;
-color: #2a5c45;
+    background-color: #90b1b1;
+    color: #2a5c45;
 }
-
