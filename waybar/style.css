@@ -172,3 +172,15 @@ tooltip {
 #custom-firefox{
     color:#f3463b
 }
+#pulseaudio {
+background-color: #f1c40f;
+color: #000000;
+}
+#pulseaudio:hover {
+background-color: #a37800;
+}
+#pulseaudio.muted {
+background-color: #90b1b1;
+color: #2a5c45;
+}
+
